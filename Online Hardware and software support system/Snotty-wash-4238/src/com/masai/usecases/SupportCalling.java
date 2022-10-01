@@ -22,7 +22,7 @@ public class SupportCalling {
 	public static void main(String[] args) {
 		
 		
-	SupportCalling scal = new SupportCalling();
+//	SupportCalling scal = new SupportCalling();
 	
 //	scal.HodUsecase();
 	
@@ -61,7 +61,21 @@ public class SupportCalling {
 //	scal.complainAttendedUsecase();
 	
 	
-	scal.changeEngineerPasswordUsecase();
+//	scal.changeEngineerPasswordUsecase();
+	
+	
+	
+	System.out.println("--------------------------   Welcome to Online Hardware and software support Application-------------------");
+	
+	boolean result =   Starter.RunApplication();
+	
+	if(result) {
+		System.out.println("                      Thank You for Using this application (><)                          ");
+	}
+	
+	
+	
+	
 	
 	}
 	
@@ -72,7 +86,9 @@ public class SupportCalling {
 	
 //	loginHod Calling
 	
-	public void HodUsecase() {
+	public boolean HodUsecase() {
+		
+		boolean res = false;
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -90,7 +106,8 @@ public class SupportCalling {
 			
 			Hod hod = dao.loginHod(user, pass);
 			
-			System.out.println("Welcome HOD "+ hod.getHodName());
+			System.out.println("\n-------------  Welcome HOD "+ hod.getHodName() + "   --------------------------");
+			res = true;
 			
 		} catch (HodException e) {
 			
@@ -98,7 +115,7 @@ public class SupportCalling {
 		}
 	
 		
-		
+		return res;
 	}
 	
 	
@@ -308,7 +325,10 @@ public class SupportCalling {
 	
 //	loginEmployeeUsecase Calling
 	
-	public void loginEmployeeUsecase() {
+	public boolean loginEmployeeUsecase() {
+		
+		boolean res = false;
+		
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -326,14 +346,18 @@ public class SupportCalling {
 			
 			Employee employee = dao.loginEmployee(user, pass); 
 			
-			System.out.println("Welcome Employee "+ employee.getEmpName());
+			System.out.println("\n<-----------------  Welcome Employee "+ employee.getEmpName() + "  --------------------------->");
+			
+			res = true;
 			
 		} catch (EmployeeException e) {
 			
-			System.out.println(e.getMessage());
+			System.out.println("\n---------------------> "+e.getMessage());
 		
 		}
 	
+		return res;
+		
 	}
 	
 	
@@ -486,7 +510,10 @@ public class SupportCalling {
 	
 //	loginEngineerUsecase Calling
 	
-	public void loginEngineerUsecase() {
+	public boolean loginEngineerUsecase() {
+		
+		boolean res = false;
+		
 		
 		Scanner sc = new Scanner(System.in);
 		
@@ -504,13 +531,17 @@ public class SupportCalling {
 			
 			Engineer engineer = dao.loginEngineer(user, pass);
 			
-			System.out.println("Welcome Employee "+ engineer.getEngName());
+			System.out.println("\n-------------------  Welcome Employee "+ engineer.getEngName() + "   --------------------------");
+			
+			res = true;
 			
 		} catch (EngineerException e) {
 			
-			System.out.println(e.getMessage());
+			System.out.println("\n<-------------  " + e.getMessage() + "  ---------------------->");
 		}
 		
+		
+		return res;
 		
 	}
 	

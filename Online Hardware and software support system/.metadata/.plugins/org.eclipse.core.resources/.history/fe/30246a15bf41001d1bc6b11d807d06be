@@ -1,0 +1,205 @@
+package com.masai.usecases;
+
+import java.util.Scanner;
+
+public class Starter {
+
+	
+	public static boolean RunApplication() {
+		
+		boolean finalRes = true;
+		
+		SupportCalling sps = new SupportCalling();
+		
+		System.out.println("\nPlease select an option to continue : \n");
+		
+		System.out.println("Selcet - 1 : HOD");
+		System.out.println("Selcet - 2 : Engineer");
+		System.out.println("Selcet - 3 : Employee");
+		System.out.println("\nEnter your Choice");
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int key = sc.nextInt();
+		
+		
+		switch (key) {
+		case 1: {
+			
+			System.out.println("\nLogin first\n");
+			boolean using =  sps.HodUsecase();
+			
+			if(using) {
+			
+			boolean res = true;
+			
+			while(res) {
+				
+				System.out.println("\nPlease select an option to perform a task : \n");
+
+				System.out.println("Selcet - 1 : Register a new Engineer");
+				System.out.println("Selcet - 2 : List of all registered Engineer");
+				System.out.println("Selcet - 3 : Delete an engineer from record");
+				System.out.println("Selcet - 4 : See Raised Problems");
+				System.out.println("Selcet - 5 : Assign complain to an engineer");
+				
+				System.out.println("\nEnter your Choice");
+				int hodKey = sc.nextInt();
+				
+				switch (hodKey) {
+				
+				case 1: {
+					
+					sps.registerEngineerUsecase();
+					break;
+				}
+				case 2: {
+					
+					sps.getAllRegisterEngineerUsecase();
+					break;
+				}
+				case 3: {
+					
+					sps.deleteEngineerUsecase();
+					break;
+				}
+				case 4: {
+					
+					sps.getAllRaisedComplainUsecase();
+					break;
+				}
+				case 5: {
+					
+					sps.allotingComplainToEngineerUsecase();
+					break;
+				}
+				
+				default:{
+					System.out.println("\nInvalid Input");
+					}
+				
+				}
+				
+				
+				System.out.println("\nPress - 1 : To go to main Menue");
+				System.out.println("Press - 2 : To close the application");
+				System.out.println("Press - 3 : To see these task again");
+				System.out.println("\nEnter your Choice");
+				int rep = sc.nextInt();
+				
+				if(rep == 1) {
+					Starter.RunApplication();
+				}
+				else if(rep == 2) {
+					res = false;
+					
+				}
+				
+			   }
+			}	
+			else {
+				System.out.println("\n******************* Try again ********************************************\n");
+				Starter.RunApplication();
+			}
+			
+			break;
+			
+		}
+		
+		
+		case 2: {
+			
+			System.out.println("\nLogin first(credentials given by the HOD) \n");
+			boolean using =  sps.loginEngineerUsecase();
+			
+			if(using) {
+			
+			boolean res = true;
+			
+			while(res) {
+				
+				System.out.println("\nPlease select an option to perform a task : \n");
+
+				System.out.println("Selcet - 1 : View list of assigned complaines by HOD");
+				System.out.println("Selcet - 2 : Update status of the complaines(whether it solved or any thing)");
+				System.out.println("Selcet - 3 : View data of attended complaines");
+				System.out.println("Selcet - 4 : Change Password");
+				
+				
+				System.out.println("\nEnter your Choice");
+				int hodKey = sc.nextInt();
+				
+				switch (hodKey) {
+				
+				case 1: {
+					
+					sps.EngineerAllotComplainUsecase();
+					break;
+				}
+				case 2: {
+					
+					sps.engineerUpdateStatusUsecase();
+					break;
+				}
+				case 3: {
+					
+					sps.complainAttendedUsecase();
+					break;
+				}
+				case 4: {
+					
+					sps.changeEngineerPasswordUsecase();
+					break;
+				}
+				default:{
+					System.out.println("\nInvalid Input");
+					}
+				
+				}
+				
+				
+				System.out.println("\nPress - 1 : To go to main Menue");
+				System.out.println("Press - 2 : To close the application");
+				System.out.println("Press - 3 : To see these task again");
+				System.out.println("\nEnter your Choice");
+				int rep = sc.nextInt();
+				
+				if(rep == 1) {
+					Starter.RunApplication();
+				}
+				else if(rep == 2) {
+					res = false;
+					
+				}
+				
+			   }
+			}	
+			else {
+				System.out.println("<------------  If you dont have credentials talk to your HOD / or /  ------------------>");
+				System.out.println("\n******************* Try again ********************************************\n");
+				Starter.RunApplication();
+			}
+			
+			break;
+			
+		}
+		
+		
+		
+		
+		
+		default:
+//			throw new IllegalArgumentException("Unexpected value: " + key);
+		}
+		
+		
+		
+		
+		return finalRes;
+		
+	}
+	
+	
+	
+	
+}

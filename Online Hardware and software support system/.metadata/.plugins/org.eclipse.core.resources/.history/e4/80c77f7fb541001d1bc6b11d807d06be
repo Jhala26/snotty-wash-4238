@@ -1,0 +1,49 @@
+package com.masai.usecases;
+
+import java.util.Scanner;
+
+public class Starter {
+
+	
+	public static boolean RunApplication() {
+		
+		boolean finalRes = false;
+		
+		System.out.println("\nPlease select an option to continue : \n");
+		
+		System.out.println("Selcet - 1 : HOD");
+		System.out.println("Selcet - 2 : Engineer");
+		System.out.println("Selcet - 3 : Employee");
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int key = sc.nextInt();
+		
+		
+		switch (key) {
+		case 1: {
+			
+			boolean res = true;
+			
+			while(res) {
+				
+				System.out.println("\nPlease select an option to perform a task : \n");
+				System.out.println("Selcet - 1 : HOD");
+				System.out.println("Selcet - 2 : Engineer");
+				System.out.println("Selcet - 3 : Employee");
+				
+				
+			}
+			
+			
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + key);
+		}
+		
+	}
+	
+	
+	
+	
+}

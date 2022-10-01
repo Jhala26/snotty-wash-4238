@@ -1,0 +1,23 @@
+package com.masai.usecases;
+
+public class Starter {
+
+	
+	public boolean RunApplication() {
+		
+		boolean finalRes = false;
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+}
