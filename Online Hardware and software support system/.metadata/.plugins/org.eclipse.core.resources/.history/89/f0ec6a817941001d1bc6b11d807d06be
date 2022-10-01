@@ -1,0 +1,61 @@
+package com.masai.dao;
+
+import java.util.List;
+
+import com.masai.bean.Complain;
+import com.masai.bean.ComplainStatus;
+import com.masai.bean.Employee;
+import com.masai.bean.Engineer;
+import com.masai.bean.Hod;
+import com.masai.exception.ComplainException;
+import com.masai.exception.EmployeeException;
+import com.masai.exception.EngineerException;
+import com.masai.exception.HodException;
+
+public interface SupportDao {
+
+//	HOT Roles
+	
+	public Hod loginHod(String username, String password) throws HodException ;
+	
+	public String registerEngineer(Engineer engineer);
+	
+	public List<Engineer> getAllRegisterEngineer() throws EngineerException;
+	
+	public String deleteEngineer(int engId);
+	
+	public List<Complain> getAllRaisedComplain() throws ComplainException;
+	
+	public String allotingComplainToEngineer(int compId, int engId, String type) throws EngineerException, ComplainException;
+	
+	
+	
+	
+//	Employee Roles
+	
+	
+	public String registerEmployee(Employee employee);
+	
+	public Employee loginEmployee(String username, String password) throws EmployeeException;
+	
+	public Complain registerComplain(Complain complain);
+	
+	public ComplainStatus employeeComplainStatus(int compId) throws ComplainException;
+	
+	public List<Complain> getAllRaisedComplainByEmployee(int empId) throws ComplainException;
+	
+	public String changeEmployeePassword(int empId, String oldPass, String newPass) throws EmployeeException;
+	
+	
+//	Engineer Roles
+	
+	public Engineer loginEngineer(String username, String Password) throws EngineerException;
+	
+	public List<ComplainStatus> EngineerAllotComplain(int engId) throws EngineerException;
+	
+	public String engineerUpdateStatus(int compId, String newStatus) throws ComplainException;
+	
+	public List<ComplainStatus> complainAttended(int engId) throws EngineerException();
+	
+	
+}

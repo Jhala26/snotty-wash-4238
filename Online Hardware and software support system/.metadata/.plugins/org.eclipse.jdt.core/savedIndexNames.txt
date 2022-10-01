@@ -1,0 +1,5 @@
+INDEX VERSION 1.131+D:\masai unit-5\java sb101\construct weak\Online Hardware and software support system\.metadata\.plugins\org.eclipse.jdt.core
+2292544779.index
+3307678786.index
+1865797976.index
+3967948446.index

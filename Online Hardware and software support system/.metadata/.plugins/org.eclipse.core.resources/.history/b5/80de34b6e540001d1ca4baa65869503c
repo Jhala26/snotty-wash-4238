@@ -1,0 +1,82 @@
+package com.masai.bean;
+
+public class Complain {
+
+	private int CompId;
+	private String comType;
+	private int emplId;
+	private String compStatus;
+	private String description;
+	
+	public Complain() {
+		
+	}
+
+	public Complain(String comType, int emplId, String compStatus, String description) {
+		super();
+		this.comType = comType;
+		this.emplId = emplId;
+		this.compStatus = compStatus;
+		this.description = description;
+	}
+
+	public Complain(int compId, String comType, int emplId, String compStatus, String description) {
+		super();
+		CompId = compId;
+		this.comType = comType;
+		this.emplId = emplId;
+		this.compStatus = compStatus;
+		this.description = description;
+	}
+
+	public int getCompId() {
+		return CompId;
+	}
+
+	public void setCompId(int compId) {
+		CompId = compId;
+	}
+
+	public String getComType() {
+		return comType;
+	}
+
+	public void setComType(String comType) {
+		this.comType = comType;
+	}
+
+	public int getEmplId() {
+		return emplId;
+	}
+
+	public void setEmplId(int emplId) {
+		this.emplId = emplId;
+	}
+
+	public String getCompStatus() {
+		return compStatus;
+	}
+
+	public void setCompStatus(String compStatus) {
+		this.compStatus = compStatus;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	@Override
+	public String toString() {
+		return "Complain [CompId=" + CompId + ", comType=" + comType + ", emplId=" + emplId + ", compStatus="
+				+ compStatus + ", description=" + description + "]";
+	}
+	
+	
+	
+	
+	
+}

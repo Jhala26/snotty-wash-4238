@@ -1,0 +1,108 @@
+
+
+create table hod
+(
+HodId int primary key,
+Hname varchar(20),
+Husername varchar(20) NOT NULL UNIQUE,
+hpassword varchaer(20)
+);
+
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| HodId     | int         | NO   | PRI | NULL    |       |
+| Hname     | varchar(20) | YES  |     | NULL    |       |
+| Husername | varchar(20) | NO   | UNI | NULL    |       |
+| Hpassword | varchar(20) | NO   |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+
+
+
+create table engineer
+(
+EngId int primary key AUTO_INCREMENT,
+EngName varchar(20),
+EngUsername varchar(20) NOT NULL UNIQUE,
+EngPassword varchar(20) NOT NULL,
+Category varchar(20) NOT NULL
+);
+
+-> ALTER TABLE Persons AUTO_INCREMENT=100;
+
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| EngId       | int         | NO   | PRI | NULL    |       |
+| EngName     | varchar(20) | YES  |     | NULL    |       |
+| EngUsername | varchar(20) | NO   | UNI | NULL    |       |
+| EngPassword | varchar(20) | NO   |     | NULL    |       |
+| Category    | varchar(20) | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+
+
+create table Employee
+(
+EmpId int primary key,
+EmpName varchar(12),
+EmpUsername varchar(20) NOT NULL UNIQUE,
+EmpPassword varchar(15) NOT NULL
+);
+
+
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| EmpId       | int         | NO   | PRI | NULL    |       |
+| EmpName     | varchar(12) | YES  |     | NULL    |       |
+| EmpUsername | varchar(20) | NO   | UNI | NULL    |       |
+| EmpPassword | varchar(15) | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+create table complain
+(
+CompID int primary key AUTO_INCREMENT,
+ComType varchar(10) NOT NULL,
+EmplId int NOT NULL,
+CompStatus varchar(10) NOT NULL,
+Description varchar(30)
+);
+
+-> ALTER TABLE complain AUTO_INCREMENT=2111;
+
+
++-------------+-------------+------+-----+---------+----------------+
+| Field       | Type        | Null | Key | Default | Extra          |
++-------------+-------------+------+-----+---------+----------------+
+| CompID      | int         | NO   | PRI | NULL    | auto_increment |
+| ComType     | varchar(10) | NO   |     | NULL    |                |
+| EmplId      | int         | NO   |     | NULL    |                |
+| CompStatus  | varchar(10) | NO   |     | NULL    |                |
+| Description | varchar(30) | YES  |     | NULL    |                |
++-------------+-------------+------+-----+---------+----------------+
+
+
+
+create table complain_engineer
+(
+CompID int,
+EngId int,
+foreign key(compID) references complain(compId) ON UPDATE CASCADE ON DELETE CASCADE,
+foreign key(EngId) references engineer(EngId) ON UPDATE CASCADE ON DELETE CASCADE
+);
+
+
++--------+------+------+-----+---------+-------+
+| Field  | Type | Null | Key | Default | Extra |
++--------+------+------+-----+---------+-------+
+| CompID | int  | YES  | MUL | NULL    |       |
+| EngId  | int  | YES  | MUL | NULL    |       |
++--------+------+------+-----+---------+-------+
+
+
+-> select c.compId, c.comType, c.compStatus, e.engId, e.engName, e.EngUsername from complain c INNER JOIN engineer e INNER JOIN complain_engineer ce ON c.compID = ce.compId AND e.engId = ce.engID AND c.compId = 2112;
+
+-> "select c.compId, c.comType, c.compStatus, e.engId, e.engName, e.EngUsername "
+					+ "from complain c INNER JOIN engineer e INNER JOIN complain_engineer ce "
+					+ "ON c.compID = ce.compId AND e.engId = ce.engID AND c.compId = ?"

@@ -1,0 +1,10 @@
+package com.masai.dao;
+
+import com.masai.bean.Hod;
+
+public interface SupportDao {
+
+	
+	public Hod  loginHod(String username, String password);
+	
+}

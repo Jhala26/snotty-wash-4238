@@ -1,0 +1,16 @@
+package com.masai.dao;
+
+import com.masai.bean.Engineer;
+import com.masai.bean.Hod;
+import com.masai.exception.HodException;
+
+public interface SupportDao {
+
+	
+	public Hod  loginHod(String username, String password) throws HodException ;
+	
+	public String registerEngineer(Engineer engineer);
+	
+	
+	
+}
