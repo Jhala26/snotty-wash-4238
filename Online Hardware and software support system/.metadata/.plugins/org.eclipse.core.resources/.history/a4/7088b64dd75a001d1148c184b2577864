@@ -174,7 +174,6 @@ public class Starter {
 				System.out.println("\nPress - 1 : To go to main Menue");
 				System.out.println("Press - 2 : To close the application");
 				System.out.println("Press - 3 : To see these task again");
-			
 				System.out.println("\nEnter your Choice");
 				int rep2 = sc.nextInt();
 				

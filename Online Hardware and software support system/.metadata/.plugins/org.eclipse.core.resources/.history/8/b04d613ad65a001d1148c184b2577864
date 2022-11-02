@@ -459,7 +459,7 @@ public class SupportDaoImpl implements SupportDao {
 			int res = ps.executeUpdate();
 			
 			if(res > 0) {
-				message = "Register Complain Sucessfully........!";
+				message = "Employee Registered Sucessfully........!";
 				
 				
 				PreparedStatement ps2 = conn.prepareStatement("select * from complain where ComType = ? AND EmplId = ?  AND CompStatus = ?");

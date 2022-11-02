@@ -43,7 +43,6 @@ public class Starter {
 				System.out.println("Selcet - 3 : Delete an engineer from record");
 				System.out.println("Selcet - 4 : See Raised Problems");
 				System.out.println("Selcet - 5 : Assign complain to an engineer");
-				System.out.println("Selcet - 6 : Exit");
 				
 				System.out.println("\nEnter your Choice");
 				int hodKey = sc.nextInt();
@@ -73,11 +72,6 @@ public class Starter {
 				case 5: {
 					
 					sps.allotingComplainToEngineerUsecase();
-					break;
-				}
-				case 6: {
-					
-					Starter.RunApplication();
 					break;
 				}
 				
@@ -131,7 +125,6 @@ public class Starter {
 				System.out.println("Selcet - 2 : Update status of the complaines(whether it solved or any thing)");
 				System.out.println("Selcet - 3 : View data of attended complaines");
 				System.out.println("Selcet - 4 : Change Password");
-				System.out.println("Selcet - 5 : Exit");
 				
 				
 				System.out.println("\nEnter your Choice");
@@ -159,11 +152,6 @@ public class Starter {
 					sps.changeEngineerPasswordUsecase();
 					break;
 				}
-				case 5: {
-					
-					Starter.RunApplication();
-					break;
-				}
 				default:{
 					System.out.println("\nInvalid Input");
 					}
@@ -174,7 +162,6 @@ public class Starter {
 				System.out.println("\nPress - 1 : To go to main Menue");
 				System.out.println("Press - 2 : To close the application");
 				System.out.println("Press - 3 : To see these task again");
-			
 				System.out.println("\nEnter your Choice");
 				int rep2 = sc.nextInt();
 				
@@ -297,7 +284,10 @@ public class Starter {
 			return finalRes;
 			
 		}
-
+		
+		
+		
+		
 		default:{
 			
 			System.out.println("<---------------   Invalis Input     --------------------------------------->");
